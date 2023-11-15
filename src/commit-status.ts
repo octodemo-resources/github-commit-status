@@ -27,7 +27,7 @@ export type CommitStatus = {
 }
 
 export async function createCommitStatus(octokit: any, commitStatus: CommitStatus) {
-  const result = await octokit.repos.createCommitStatus(commitStatus);
+  const result = await octokit.rest.repos.createCommitStatus(commitStatus);
 
   if (result.status !== 201) {
     throw new Error(`Unexpected status code when creating a commit status: ${result.status}.`)

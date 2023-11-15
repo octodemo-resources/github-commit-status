@@ -30,10 +30,10 @@ jobs:
         id: action_run
         uses: ./
         with:
-          continue-on-error: true
           context: test_invalid_description
           state: error
           description: 'A description that will exceed the maximum number of characters that can be used for a commit status description in the API. The current limit is 140 characters but might change in the future?'
+        continue-on-error: true
 
       - name: Fail if action succeeded
         if: steps.action_run.outcome != 'failure'

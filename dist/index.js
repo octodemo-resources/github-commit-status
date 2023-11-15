@@ -107,7 +107,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getOctokit = exports.validateDescription = exports.validateInputs = exports.getState = exports.getRepository = exports.getSha = exports.createCommitStatus = void 0;
 const github = __importStar(__nccwpck_require__(5438));
 async function createCommitStatus(octokit, commitStatus) {
-    const result = await octokit.repos.createCommitStatus(commitStatus);
+    const result = await octokit.rest.repos.createCommitStatus(commitStatus);
     if (result.status !== 201) {
         throw new Error(`Unexpected status code when creating a commit status: ${result.status}.`);
     }
