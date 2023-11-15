@@ -1,0 +1,45 @@
+name: GitHub commit status action
+description: Creates a GitHub commit status
+author: Peter Murray
+
+inputs:
+  repository:
+    description: 'The fully qualified name of the repository, e.g. octodemo/my-repo'
+    default: ${{ github.repository }}
+    required: false
+
+  sha:
+    description: 'The SHA of the commit to set the status on. Detects the correct place to apply the status based off the event for the trigger.'
+    required: false
+    default: ${{ github.sha }}
+
+  context:
+    description: 'The context name of the status, a string label to differentiate this status from the status of other systems.'
+    required: true
+
+  state:
+    description: The state of the status, can be one of error, failure, pending, or success.
+    default: success
+    required: false
+
+  description:
+    description: 'A short description of the status, limited to 256 character.'
+    required: false
+
+  target_url:
+    description: An optional URL to associate with the status.
+    required: false
+
+  token:
+    description: 'The GitHub token to use for authentication. Defaults to the token provided by the GitHub Actions environment.'
+    required: false
+    default: ${{ github.token }}
+
+  github_api_url:
+    description: 'The GitHub REST API URL to use. Defaults to the GitHub API provided by the GitHub Actions environment.'
+    required: false
+    default: ${{ github.api_url }}
+
+runs:
+  using: node18
+  main: 'dist/index.js'

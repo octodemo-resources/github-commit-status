@@ -1,0 +1,13 @@
+{
+    "name": "Node.js 18",
+    "image": "ghcr.io/octodemo/development-containers/javascript:base-20230923",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "mikestead.dotenv",
+          "GitHub.copilot",
+          "kingwl.vscode-vitest-runner"
+        ]
+      }
+    }
+  }
