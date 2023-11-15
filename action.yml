@@ -41,5 +41,5 @@ inputs:
     default: ${{ github.api_url }}
 
 runs:
-  using: node18
+  using: node20
   main: 'dist/index.js'

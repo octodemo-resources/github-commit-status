@@ -1,6 +1,6 @@
 {
-    "name": "Node.js 18",
-    "image": "ghcr.io/octodemo/development-containers/javascript:base-20230923",
+    "name": "Node.js 20",
+    "image": "ghcr.io/octodemo/development-containers/javascript:base-20231115",
     "customizations": {
       "vscode": {
         "extensions": [
