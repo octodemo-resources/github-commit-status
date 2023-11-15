@@ -2,6 +2,10 @@ name: GitHub commit status action
 description: Creates a GitHub commit status
 author: Peter Murray
 
+branding:
+  icon: check
+  color: green
+
 inputs:
   repository:
     description: 'The fully qualified name of the repository, e.g. octodemo/my-repo'
